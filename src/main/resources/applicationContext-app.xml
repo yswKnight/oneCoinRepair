@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+
+	<description>sloth-console XML list</description>
+
+<!--     <bean id="SpringContextUtil" class="com.visionet.sloth2.kefu.common.utils.SpringContextUtil"/>
+    <bean id="EhcacheUtil" class="com.visionet.sloth2.kefu.common.cache.ehcache.EhcacheUtil" init-method="initData" destroy-method="dostoryData"/> -->
+
+	<import resource="cache/applicationContext-ehcache.xml" />
+	<import resource="security/applicationContext-shiro.xml" />
+
+	<beans profile="production,functional">
+		<import resource="schedule/applicationContext-quartz-cron-local.xml" />
+	</beans>
+
+</beans>
